@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+<h1>Joom数据测试</h1>
+<div id="app">
+    <!--<a href="javascript: void(0)">12312123</a>-->
+    <counter></counter>
+</div>
+<!--<div id="draw" class="image-example-page1"></div>-->
+<script src="/javascripts/joom/bundle.js"></script>
+<% if (env !== "production") { %>
+    <script src="/reload/reload.js"></script>
+<% } %>
+</body>
+</html>

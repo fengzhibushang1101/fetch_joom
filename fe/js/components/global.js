@@ -1,0 +1,74 @@
+/**
+ * Created by jyq on 2017/12/22.
+ */
+/**
+ * Created by jyq on 2017/11/17.
+ */
+import Vue from 'vue';
+import {
+    Select,
+    Option,
+    OptionGroup,
+    Table,
+    TableColumn,
+    DatePicker,
+    Button,
+    ButtonGroup,
+    Dropdown,
+    DropdownMenu,
+    DropdownItem,
+    MenuItem,
+    MenuItemGroup,
+    Submenu,
+    Menu,
+    Container,
+    Header,
+    Main,
+    Aside,
+    Footer,
+    Checkbox,
+    Tabs,
+    TabPane,
+    Row,
+    Col,
+    Pagination,
+    Form,
+    FormItem,
+    Popover,
+    Dialog,
+    Input,
+    InputNumber
+} from 'element-ui';
+
+Vue.use(Select);
+Vue.use(Option);
+Vue.use(OptionGroup);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(DatePicker);
+Vue.use(Button);
+Vue.use(ButtonGroup);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(MenuItem);
+Vue.use(MenuItemGroup);
+Vue.use(Submenu);
+Vue.use(Menu);
+Vue.use(Container);
+Vue.use(Header);
+Vue.use(Main);
+Vue.use(Aside);
+Vue.use(Footer);
+Vue.use(Checkbox);
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Row);
+Vue.use(Col);
+Vue.use(Pagination);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+Vue.use(InputNumber);
+Vue.use(Dialog);
+Vue.use(Popover);

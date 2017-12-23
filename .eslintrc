@@ -1,0 +1,26 @@
+{
+  "extends": "airbnb-base",
+  "env":{
+    "node":false,
+    "es6":true
+  },
+  "plugins": [ "html" ],
+  "globals" : {
+      "window": true,
+      "document": true,
+      "$": true,
+      "Blob": true,
+      "module": true,
+      "require": true,
+      "process": true,
+      "__dirname": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "indent": ["error", 4],
+    "max-len": ["error", 180],
+    "comma-dangle": [2, "never"],
+    "func-names": 0,
+    "no-param-reassign": 0
+  }
+}
