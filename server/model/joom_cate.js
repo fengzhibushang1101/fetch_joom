@@ -24,7 +24,7 @@ class JoomCate extends Base {
     static create(data) {
         const newData = new this(data);
         const addSql = `INSERT INTO ${tableName}(create_date, modified_date,tag,name,p_id, is_leaf, level, pin, site_id)
-         VALUES ('${newData.create_date}','${newData.modified_date}','${newData.tag}','${newData.name.replace(/[']/g, "\\\'")}',
+         VALUES ('${newData.create_date}','${newData.modified_date}','${newData.tag}','${encodeURIComponent(newData.name)}',
          ${newData.p_id},${newData.is_leaf}, ${newData.level},'${newData.pin}',${newData.site_id})`;
         return this.exec(addSql);
     }

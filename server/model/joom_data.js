@@ -20,7 +20,7 @@ class JoomData extends Base {
     static create(data) {
         const newData = new this(data);
         const addSql = `INSERT INTO ${tableName}(create_date, modified_date, pro_no, pro_name, cate_id)
-         VALUES ('${newData.create_date}', '${newData.modified_date}', '${newData.pro_no}', "${newData.pro_name.replace(/["]/g, '\\\"')}",
+         VALUES ('${newData.create_date}', '${newData.modified_date}', '${newData.pro_no}', "${encodeURIComponent(newData.pro_name)}",
          '${newData.cate_id}')`;
         return this.exec(addSql);
     }
