@@ -24,7 +24,12 @@ class JoomData extends Base {
          '${newData.cate_id}')`;
         return this.exec(addSql);
     }
-
+    static createMany(datas) {
+        const newDatas = datas.map(item => new this(item));
+        const insertStr = newDatas.map(newData => `('${newData.create_date}', '${newData.modified_date}', '${newData.pro_no}', "${encodeURIComponent(newData.pro_name)}",'${newData.cate_id}')`).join(',');
+        const addSql = `INSERT INTO ${tableName}(create_date, modified_date, pro_no, pro_name, cate_id) VALUES ${insertStr}`;
+        return this.exec(addSql);
+    }
     static findByNo(proNo) {
         const querySql = `select * from ${tableName} where pro_no = '${proNo}' limit 1`;
         return this.exec(querySql).then(data => (data.rows.length ? new this(data.rows[0]) : false));

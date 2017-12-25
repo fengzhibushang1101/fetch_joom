@@ -16,6 +16,7 @@ let endCate = 0;
 let AllProNo = 0;
 let enProNo = 0;
 
+let insertArr = [];
 
 function getDataByUrl(url, no, time = 1) {
     axios.get(url, {
@@ -23,13 +24,17 @@ function getDataByUrl(url, no, time = 1) {
     }).then((res) => {
         const data = res.data.payload;
         const [pro_name, cate_id, pro_no] = [data.name, data.categoryId || '0', no];
-        JoomData.create({ pro_name, cate_id, pro_no }).then(() => {
-            enProNo += 1;
-            console.log(`产品总数量为${AllProNo}, 存储完成的产品数量为${enProNo}`);
-        }).catch((err) => {
-            console.log(`创建产品${no}失败`);
-            console.log(err);
-        });
+        insertArr.push({ pro_name, cate_id, pro_no });
+        if (insertArr.length === 100) {
+            JoomData.createMany(insertArr).then(() => {
+                enProNo += 1000;
+                console.log(`产品总数量为${AllProNo}, 存储完成的产品数量为${enProNo}`);
+            }).catch((err) => {
+                console.log(`创建产品失败, 失败信息为${JSON.stringify(insertArr)}`);
+                console.log(err);
+            });
+            insertArr = [];
+        }
     }).catch((err) => {
         if (time === 3) {
             console.log(`获取产品${no}失败`);
