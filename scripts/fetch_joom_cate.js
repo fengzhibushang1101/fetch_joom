@@ -19,9 +19,9 @@ const param = {
 };
 
 let queryNum = 1; // 要请求的链接数量
-let queriedNum = 0; //请求完成的链接数量
-let cateNum = 0; //已经获取的分类数量
-let storedNum = 0; //已经成功创建的分类数量
+let queriedNum = 0; // 请求完成的链接数量
+let cateNum = 0; // 已经获取的分类数量
+let storedNum = 0; // 已经成功创建的分类数量
 
 function getAllCate(pTag = 0, level = 1) {
     const params = Object.assign({}, param);

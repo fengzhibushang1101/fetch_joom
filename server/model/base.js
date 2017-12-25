@@ -5,10 +5,10 @@
 const settings = require('./settings');
 const mysql = require('mysql');
 require('../utils/date_utils');
-
+require('http').globalAgent.maxSockets = 3000;
 
 const pool = mysql.createPool({
-    connectionLimit: 20,
+    connectionLimit: 40,
     host: settings.host,
     user: settings.user,
     password: settings.password,

@@ -1,5 +1,9 @@
 <template>
-    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
+    <el-cascader
+        :options="options2"
+        @active-item-change="handleItemChange"
+        :props="props"
+    ></el-cascader>
 </template>
 <script>
     import '../../components/global';
@@ -7,12 +11,33 @@
     export default {
         data() {
             return {
-                num1: 1
+                options2: [{
+                    label: '江苏',
+                    cities: []
+                }, {
+                    label: '浙江',
+                    cities: []
+                }],
+                props: {
+                    value: 'label',
+                    children: 'cities'
+                }
             };
         },
+
         methods: {
-            handleChange(value) {
-                console.log(value);
+            handleItemChange(val) {
+                setTimeout(() => {
+                    if (val.indexOf('江苏') > -1 && !this.options2[0].cities.length) {
+                        this.options2[0].cities = [{
+                            label: '南京'
+                        }];
+                    } else if (val.indexOf('浙江') > -1 && !this.options2[1].cities.length) {
+                        this.options2[1].cities = [{
+                            label: '杭州'
+                        }];
+                    }
+                }, 300);
             }
         }
     };

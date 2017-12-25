@@ -45,15 +45,16 @@ class JoomCate extends Base {
         return this.exec(querysSql).then(data => (data.rows.length ? new this(data.rows[0]) : false));
     }
 
-    static findBypTag(pId) {
+    static findBypId(pId) {
         const querySql = `select * from ${tableName} where p_id = ${pId} `;
+        return this.exec(querySql).then(data => (data.rows.length ? data.rows.map(row => new this(row)) : false));
+    }
+
+    static findAll() {
+        const querySql = `select * from ${tableName}`;
         return this.exec(querySql).then(data => (data.rows.length ? data.rows.map(row => new this(row)) : false));
     }
 }
 
 module.exports = JoomCate;
 
-
-JoomCate.findBypTag(5282).then((data)=>{
-    console.log(data);
-})

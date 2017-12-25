@@ -37,7 +37,8 @@ import {
     Popover,
     Dialog,
     Input,
-    InputNumber
+    InputNumber,
+    Cascader
 } from 'element-ui';
 
 Vue.use(Select);
@@ -72,3 +73,4 @@ Vue.use(Input);
 Vue.use(InputNumber);
 Vue.use(Dialog);
 Vue.use(Popover);
+Vue.use(Cascader);

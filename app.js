@@ -11,6 +11,7 @@ var reload = require('reload');
 var isDev = process.env.NODE_ENV !== 'production';
 var index = require('./server/routes/index');
 var users = require('./server/routes/users');
+var api = require('./server/routes/api');
 var app = express();
 
 app.locals.env = process.env.NODE_ENV || 'dev';
@@ -51,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/api', api);
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');
