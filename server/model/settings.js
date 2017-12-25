@@ -2,10 +2,10 @@
  * Created by jyq on 2017/12/21.
  */
 const settings = {
-    host: '180.76.98.136',
-    user: 'root',
-    password: 'TeTe1L1%J1%Q1',
-    db: 'jyq',
+    host: '169.44.23.244',
+    user: 'kratos',
+    password: '3vUbY52IJ2fJq7KwWPeItNrz8',
+    db: 'fr',
     port: 3306
 };
 // const settings = {
