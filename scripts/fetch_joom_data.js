@@ -90,9 +90,11 @@ function getCateDataByUrl(url, condata, off, cate, time=1) {
             endCate += 1;
             console.log(`分类总数为${AllCate}, 采集完成的分类为${endCate}个`)
         } else {
-            getCateData(cate, off + 50);
+            setTimeout(() => {
+                getCateData(cate, off + 50);
+            }, 5000)
             items.forEach((item, i) => {
-                setTimeout(function () {
+                setTimeout(() => {
                     getItemData(item);
                 }, i * 1000);
             });
@@ -117,7 +119,7 @@ JoomCate.findAll().then((data) => {
             if (cate.is_leaf) {
                 setTimeout(function () {
                     getCateData(cate);
-                }, no * 1000);
+                }, no * 3000);
                 no += 1;
             } else {
                 endCate += 1;
